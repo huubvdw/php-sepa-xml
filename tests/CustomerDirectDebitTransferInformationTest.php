@@ -23,4 +23,11 @@ class CustomerDirectDebitTransferInformationTest extends \PHPUnit_Framework_Test
         $information = new CustomerDirectDebitTransferInformation(100, 'DE12500105170648489890', 'Their Corp', 'MyEndToEndId');
         $this->assertEquals('MyEndToEndId', $information->getEndToEndIdentification());
     }
+
+    public function testElectronicSignature()
+    {
+        $information = new CustomerDirectDebitTransferInformation(100, 'DE12500105170648489890', 'Their Corp');
+        $information->setElectronicSignature('000123456789');
+        $this->assertEquals('000123456789', $information->getElectronicSignature());
+    }
 }

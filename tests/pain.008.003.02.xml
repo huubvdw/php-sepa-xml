@@ -75,6 +75,7 @@
 								</Id>
 							</OrgnlCdtrSchmeId>
 						</AmdmntInfDtls>
+						<ElctrncSgntr>Electronic-Signature-Id</ElctrncSgntr>
 					</MndtRltdInf>
 				</DrctDbtTx>
 				<DbtrAgt>
@@ -107,6 +108,7 @@
 						<MndtId>Other-Mandate-Id</MndtId>
 						<DtOfSgntr>2010-11-20</DtOfSgntr>
 						<AmdmntInd>false</AmdmntInd>
+						<ElctrncSgntr>Other-Electronic-Signature-Id</ElctrncSgntr>
 					</MndtRltdInf>
 				</DrctDbtTx>
 				<DbtrAgt>

@@ -37,6 +37,11 @@ class CustomerDirectDebitTransferInformation extends BaseTransferInformation
     protected $mandateSignDate;
 
     /**
+     * @var string
+     */
+    protected $electronicSignature;
+
+    /**
      * @var \DateTime
      */
     protected $finalCollectionDate;
@@ -177,6 +182,22 @@ class CustomerDirectDebitTransferInformation extends BaseTransferInformation
     public function getMandateSignDate()
     {
         return $this->mandateSignDate;
+    }
+
+    /**
+     * @param string $electronicSignature
+     */
+    public function setElectronicSignature($electronicSignature)
+    {
+        $this->electronicSignature = StringHelper::sanitizeString($electronicSignature);
+    }
+
+    /**
+     * @return string
+     */
+    public function getElectronicSignature()
+    {
+        return $this->electronicSignature;
     }
 
     /**

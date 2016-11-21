@@ -165,6 +165,7 @@ class CustomerDirectDebitValidationTest extends \PHPUnit_Framework_TestCase
         $transfer->setRemittanceInformation('Only A-Z without äöüßÄÖÜ remittanceInformation');
         $transfer->setMandateSignDate(new \DateTime());
         $transfer->setMandateId('Only A-Z without äöüßÄÖÜ mandateId');
+        $transfer->setElectronicSignature('Only A-Z without äöüßÄÖÜ ElctrncSgntr');
         $payment->addTransfer($transfer);
 
         $sepaFile->addPaymentInformation($payment);
@@ -190,6 +191,8 @@ class CustomerDirectDebitValidationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Only A-Z without aeoeuessAeOeUe remittanceInformation', $testNode->item(0)->textContent);
         $testNode = $xpathDoc->query('//sepa:MndtId');
         $this->assertEquals('Only A-Z without aeoeuessAeOeUe mandateId', $testNode->item(0)->textContent);
+        $testNode = $xpathDoc->query('//sepa:ElctrncSgntr');
+        $this->assertEquals('Only A-Z without aeoeuessAeOeUe ElctrncSgntr', $testNode->item(0)->textContent);
         $testNode = $xpathDoc->query('//sepa:CdtrSchmeId//sepa:PrvtId//sepa:Id');
         $this->assertEquals('Only A-Z without aeoeuessAeOeUe creditorSchemeId', $testNode->item(0)->textContent);
     }

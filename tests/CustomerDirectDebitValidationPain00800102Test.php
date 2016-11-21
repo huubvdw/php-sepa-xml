@@ -67,6 +67,7 @@ class CustomerDirectDebitValidationPain00800102Test extends \PHPUnit_Framework_T
         $transfer->setBic('OKOYFIHH');
         $transfer->setMandateSignDate(new \DateTime('16.08.2013'));
         $transfer->setMandateId('ABCDE');
+        $transfer->setElectronicSignature('000123456789');
         $transfer->setRemittanceInformation('Transaction Description');
 
         $payment = new PaymentInformation('Payment Info ID', 'FR1420041010050500013M02606', 'PSSTFRPPMON', 'My Corp');

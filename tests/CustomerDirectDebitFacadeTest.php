@@ -72,6 +72,7 @@ class CustomerDirectDebitFacadeTest extends \PHPUnit_Framework_TestCase
                 'debtorName' => 'Their Company',
                 'debtorMandate' => 'AB12345',
                 'debtorMandateSignDate' => '13.10.2012',
+                'electronicSignature' => 'CD000123456789',
                 'remittanceInformation' => 'Purpose of this direct debit'
             )
         );

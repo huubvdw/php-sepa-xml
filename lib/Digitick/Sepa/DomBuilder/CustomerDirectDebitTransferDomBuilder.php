@@ -158,6 +158,11 @@ class CustomerDirectDebitTransferDomBuilder extends BaseDomBuilder
         $mandateRelatedInformation->appendChild(
             $this->createElement('DtOfSgntr', $transactionInformation->getMandateSignDate()->format('Y-m-d'))
         );
+        if($transactionInformation->getElectronicSignature()) {
+            $mandateRelatedInformation->appendChild(
+                $this->createElement('ElctrncSgntr', $transactionInformation->getElectronicSignature())
+            );
+        }
         $directDebitTransactionInformation->appendChild($directDebitTransaction);
 
         // TODO add the possibility to add CreditorSchemeId on transfer level
